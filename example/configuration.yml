@@ -1,0 +1,42 @@
+---
+festival_params:
+  {}
+pocketsphinx_params:
+  keyphrase:
+    'Сивилла'
+
+  # Sibylla::Root = $HOME/.sibylla/
+
+  hmm:
+    - "\"#{Sibylla::Root}/zero_ru.cd_cont_4000\""
+  lm:
+    - "\"#{Sibylla::Root}/dict/lmbase.lm.DMP\""
+
+  # no need if set hmm ...
+  #
+  # tmat:
+  #   - "\"#{Sibylla::Root}/zero_ru.cd_cont_4000/transition_matrices\""
+  # fdict:
+  #   - "\"#{Sibylla::Root}/zero_ru.cd_cont_4000/noisedict\""
+  # featparams:
+  #   - "\"#{Sibylla::Root}/zero_ru.cd_cont_4000/feat.params\""
+  # mdef:
+  #   - "\"#{Sibylla::Root}/zero_ru.cd_cont_4000/mdef\""
+  # mean:
+  #   - "\"#{Sibylla::Root}/zero_ru.cd_cont_4000/means\""
+  # var:
+  #   - "\"#{Sibylla::Root}/zero_ru.cd_cont_4000/variances\""
+  # sendump:
+  #   - "\"#{Sibylla::Root}/zero_ru.cd_cont_4000/mixture_weights\""
+
+  # clear inputs ...
+  #
+  # logfn:
+  #  '/dev/null'
+
+  dict:
+    - "\"#{Sibylla::Root}/dict/my.dic\""
+  vad_threshold:
+    3
+tasks:
+  - "\"#{Sibylla::Root}/config/cmds.yml\""
