@@ -4,7 +4,7 @@ Gem::Specification.new do |gem|
   gem.authors = 'Alexsey Ermolaev'
   gem.email = 'afay.zangetsu@gmail.com'
   gem.homepage = 'https://github.com/AfsmNGhr/sibylla'
-  gem.description = 'Ruby voice assistant'
+  gem.description = 'Ruby voice assistant use festival and pocketsphinx'
   gem.summary = 'Ruby voice assistant'
   gem.license = 'MIT'
 
