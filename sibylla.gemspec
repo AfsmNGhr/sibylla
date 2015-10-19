@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 3.3'
 
   gem.files = `git ls-files`.split("\n")
-  gem.require_paths = ['lib', 'config']
+  gem.require_paths = ['lib', 'example']
   gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
 
   gem.extra_rdoc_files = ['License.org', 'README.md']

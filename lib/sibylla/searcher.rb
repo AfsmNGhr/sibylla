@@ -1,6 +1,11 @@
 module Sibylla
   class Searcher
-    def initialize(query)
+    class << self
+      def task(query)
+      end
+    end
+
+    def initialize
     end
   end
 end
