@@ -19,6 +19,5 @@ task :test_gems do
 end
 
 Coveralls::RakeTask.new
-task test_gems_with_coveralls: [:test_gems, :spec,
-                                :features, 'coveralls:push']
-task default: :test_gems_with_coveralls
+task spec: [:test_gems, 'coveralls:push']
+task default: :spec
