@@ -15,7 +15,6 @@ task :spec do
     Dir.chdir(root)
     system 'rake', 'spec'
   end
-  system 'coveralls'
 end
 
 task default: :spec

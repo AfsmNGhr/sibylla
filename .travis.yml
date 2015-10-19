@@ -28,3 +28,5 @@ before_install:
   - sudo ldconfig
   - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
 install: bundle install
+after_success:
+  - coveralls
