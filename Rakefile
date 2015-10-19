@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'bundler'
-require 'coveralls/rake/task'
 
 begin
   Bundler.setup(:default, :development)
@@ -10,14 +9,12 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 
-task :test_gems do
-  ['pocketsphinx-ruby', 'fest'].each do |gem|
+task :spec do
+  ['pocketsphinx-ruby', 'fest', 'sibylla'].each do |gem|
     root = Bundler.rubygems.find_name(gem).first.full_gem_path
     Dir.chdir(root)
-    system 'rake', 'spec'
+    gem.eql?('sibylla') ? system('rspec') : system('rake', 'spec')
   end
 end
 
-Coveralls::RakeTask.new
-task spec: [:test_gems, 'coveralls:push']
 task default: :spec
