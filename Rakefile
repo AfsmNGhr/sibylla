@@ -10,19 +10,12 @@ rescue Bundler::BundlerError => e
 end
 
 task :spec do
-  ['pocketsphinx-ruby', 'fest'].each do |gem|
+  ['pocketsphinx-ruby', 'fest', 'sibylla'].each do |gem|
     root = Bundler.rubygems.find_name(gem).first.full_gem_path
     Dir.chdir(root)
     system 'rake', 'spec'
   end
-end
-
-task :full do
-  ['pocketsphinx-ruby', 'fest'].each do |gem|
-    root = Bundler.rubygems.find_name(gem).first.full_gem_path
-    Dir.chdir(root)
-    system 'rspec'
-  end
+  system 'coveralls'
 end
 
 task default: :spec
